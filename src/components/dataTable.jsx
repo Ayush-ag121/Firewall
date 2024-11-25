@@ -5,6 +5,10 @@ import Allow_1 from './module2/Allow_1';
 // import Allow_all_deny_one_port from './module2/Allow_all_deny_one_port';
 import Allow_All_Deny_ports from './module2/Allow_All_Deny_ports';
 import Allow_All_Ports from './module2/Allow_All_Ports';
+import App_list from './module2/App_list';
+import Show_All_ports from './module2/Show_All_ports';
+import Block_range_of_ip from './module3/Block_range_of_ip';
+import Block_specific_ip from './module3/Block_specific_ip';
 
 const Datatable = () => {
   // const [deniedPorts, setDeniedPorts] = useState([]);
@@ -107,9 +111,16 @@ const Datatable = () => {
     //   </div>
     // </div>
     <>
+
       <Allow_1/>
       <Allow_All_Deny_ports/>
-      <Allow_All_Ports/>
+      {/* <Allow_All_Ports/> */}
+      <App_list/>
+      <Show_All_ports/>
+
+
+      <Block_range_of_ip/>
+      <Block_specific_ip/>
     </>
   );
 
