@@ -1,107 +1,116 @@
 import React, { useState ,useEffect} from 'react';
 import axios from "axios";
 import { FaCheckCircle, FaLock, FaSyncAlt, FaEllipsisV, FaShieldAlt, FaPlusCircle } from 'react-icons/fa';
+import Allow_1 from './module2/Allow_1';
+// import Allow_all_deny_one_port from './module2/Allow_all_deny_one_port';
+import Allow_All_Deny_ports from './module2/Allow_All_Deny_ports';
+import Allow_All_Ports from './module2/Allow_All_Ports';
 
 const Datatable = () => {
-  const [deniedPorts, setDeniedPorts] = useState([]);
-  const [portToDeny, setPortToDeny] = useState("");
-  const [message, setMessage] = useState("");
-  const [allowedPorts, setAllowedPorts] = useState([]);
+  // const [deniedPorts, setDeniedPorts] = useState([]);
+  // const [portToDeny, setPortToDeny] = useState("");
+  // const [message, setMessage] = useState("");
+  // const [allowedPorts, setAllowedPorts] = useState([]);
 
-  // Fetch denied ports from Flask API
-  useEffect(() => {
-    axios.get("http://127.0.0.1:5000/list-deny-ports")
-      .then((response) => {
-        setDeniedPorts(response.data.denied_ports);
-      })
-      .catch((error) => {
-        console.error("Error fetching denied ports:", error);
-      });
-  }, []);
+  // // Fetch denied ports from Flask API
+  // useEffect(() => {
+  //   axios.get("http://127.0.0.1:5000/list-deny-ports")
+  //     .then((response) => {
+  //       setDeniedPorts(response.data.denied_ports);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching denied ports:", error);
+  //     });
+  // }, []);
 
-  // Allow all denied ports
-  const handleAllowAllPorts = () => {
-    axios.post("http://127.0.0.1:5000/allow-all-ports")
-      .then((response) => {
-        setAllowedPorts(response.data.allowed_ports);
-        setMessage("All denied ports have been allowed successfully.");
-      })
-      .catch((error) => {
-        console.error("Error allowing all ports:", error);
-        setMessage("Error allowing all ports.");
-      });
-  };
+  // // Allow all denied ports
+  // const handleAllowAllPorts = () => {
+  //   axios.post("http://127.0.0.1:5000/allow-all-ports")
+  //     .then((response) => {
+  //       setAllowedPorts(response.data.allowed_ports);
+  //       setMessage("All denied ports have been allowed successfully.");
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error allowing all ports:", error);
+  //       setMessage("Error allowing all ports.");
+  //     });
+  // };
 
-  // Deny a specific port
-  const handleDenyPort = () => {
-    axios.post("http://127.0.0.1:5000/deny-port", { port: portToDeny })
-      .then((response) => {
-        setMessage(response.data.message);
-      })
-      .catch((error) => {
-        console.error("Error denying port:", error);
-        setMessage("Error denying port.");
-      });
-  };
+  // // Deny a specific port
+  // const handleDenyPort = () => {
+  //   axios.post("http://127.0.0.1:5000/deny-port", { port: portToDeny })
+  //     .then((response) => {
+  //       setMessage(response.data.message);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error denying port:", error);
+  //       setMessage("Error denying port.");
+  //     });
+  // };
 
-  // Manage ports by allowing all and then denying a specific one
-  const handleManagePorts = () => {
-    axios.post("http://127.0.0.1:5000/manage-ports", { port: portToDeny })
-      .then((response) => {
-        setAllowedPorts(response.data.allowed_ports);
-        setMessage(response.data.message);
-      })
-      .catch((error) => {
-        console.error("Error managing ports:", error);
-        setMessage("Error managing ports.");
-      });
-  };
+  // // Manage ports by allowing all and then denying a specific one
+  // const handleManagePorts = () => {
+  //   axios.post("http://127.0.0.1:5000/manage-ports", { port: portToDeny })
+  //     .then((response) => {
+  //       setAllowedPorts(response.data.allowed_ports);
+  //       setMessage(response.data.message);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error managing ports:", error);
+  //       setMessage("Error managing ports.");
+  //     });
+  // };
 
   return (
-    <div className="App">
-      <h1>Firewall Management</h1>
+    // <div className="App">
+    //   <h1>Firewall Management</h1>
 
-      <div>
-        <h2>Denied Ports</h2>
-        <ul>
-          {deniedPorts.length > 0 ? (
-            deniedPorts.map((port, index) => (
-              <li key={index}>{port}</li>
-            ))
-          ) : (
-            <p>No denied ports found.</p>
-          )}
-        </ul>
-      </div>
+    //   <div>
+    //     <h2>Denied Ports</h2>
+    //     <ul>
+    //       {deniedPorts.length > 0 ? (
+    //         deniedPorts.map((port, index) => (
+    //           <li key={index}>{port}</li>
+    //         ))
+    //       ) : (
+    //         <p>No denied ports found.</p>
+    //       )}
+    //     </ul>
+    //   </div>
 
-      <div>
-        <h2>Manage Ports</h2>
-        <input
-          type="text"
-          placeholder="Enter Port to Deny"
-          value={portToDeny}
-          onChange={(e) => setPortToDeny(e.target.value)}
-        />
-        <button onClick={handleDenyPort}>Deny Port</button>
-        <button onClick={handleAllowAllPorts}>Allow All Ports</button>
-        <button onClick={handleManagePorts}>Manage Ports</button>
-      </div>
+    //   <div>
+    //     <h2>Manage Ports</h2>
+    //     <input
+    //       type="text"
+    //       placeholder="Enter Port to Deny"
+    //       value={portToDeny}
+    //       onChange={(e) => setPortToDeny(e.target.value)}
+    //     />
+    //     <button onClick={handleDenyPort}>Deny Port</button>
+    //     <button onClick={handleAllowAllPorts}>Allow All Ports</button>
+    //     <button onClick={handleManagePorts}>Manage Ports</button>
+    //   </div>
 
-      {message && <p>{message}</p>}
+    //   {message && <p>{message}</p>}
 
-      <div>
-        <h2>Allowed Ports</h2>
-        <ul>
-          {allowedPorts.length > 0 ? (
-            allowedPorts.map((port, index) => (
-              <li key={index}>{port}</li>
-            ))
-          ) : (
-            <p>No allowed ports found.</p>
-          )}
-        </ul>
-      </div>
-    </div>
+    //   <div>
+    //     <h2>Allowed Ports</h2>
+    //     <ul>
+    //       {allowedPorts.length > 0 ? (
+    //         allowedPorts.map((port, index) => (
+    //           <li key={index}>{port}</li>
+    //         ))
+    //       ) : (
+    //         <p>No allowed ports found.</p>
+    //       )}
+    //     </ul>
+    //   </div>
+    // </div>
+    <>
+      <Allow_1/>
+      <Allow_All_Deny_ports/>
+      <Allow_All_Ports/>
+    </>
   );
 
 
