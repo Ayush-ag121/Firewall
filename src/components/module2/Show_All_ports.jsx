@@ -1,6 +1,8 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect, useContext} from 'react'
+import Context from '../../context/context';
 
 export default function Show_All_ports() {
+  let {render} = useContext(Context)
   const [rules, setRules] = useState([]);
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -24,7 +26,7 @@ export default function Show_All_ports() {
 
   useEffect(() => {
     fetchFirewallRules();
-  }, []);
+  }, [render]);
 
   // Helper function to parse firewall rules data
   const parseRule = (line) => {
@@ -47,13 +49,13 @@ export default function Show_All_ports() {
     .filter((rule) => rule); // Remove null values
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      <h1>Firewall Status</h1>
+    <div className='bg-white' style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+      <h1 style={{fontSize:"40px"}}>Firewall Status</h1>
       {loading ? (
         <p>Loading...</p>
       ) : (
         <>
-          <h2>Rules</h2>
+          <h2 className='text-[20px]'>Rules</h2>
           {parsedRules.length > 0 ? (
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
               <thead>

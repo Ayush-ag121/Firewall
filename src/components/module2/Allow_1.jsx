@@ -1,7 +1,9 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect, useContext} from 'react'
+import Context from '../../context/context';
 
 export default function Allow_1() {
   const [port, setPort] = useState('');
+  let {render,setRender}= useContext(Context)
   const [responseMessage, setResponseMessage] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const handleSubmit = async (e) => {
@@ -30,8 +32,11 @@ export default function Allow_1() {
       setErrorMessage('Failed to connect to the server');
       setResponseMessage(null);
     }
+    setRender(value=>value+1)
   };
+  useEffect(()=>{
 
+  },[responseMessage,errorMessage])
   return (
     <div className="App">
       <h1>Allow Port Through Firewall</h1>

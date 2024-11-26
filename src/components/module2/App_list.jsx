@@ -5,8 +5,11 @@ export default function App_list() {
     const [selectedApp, setSelectedApp] = useState("");
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
-  
+    const [error,setError] = useState(false)
     // Fetch available applications
+    useEffect(()=>{
+      setTimeout(()=>setError(false),2000)
+    },[error])
     const fetchApps = async () => {
       setLoading(true);
       try {
@@ -37,13 +40,13 @@ export default function App_list() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ app: selectedApp }),
+          body: JSON.stringify({ app: selectedApp.trim() }),
         });
         const data = await response.json();
         if (response.ok) {
           setMessage(data.message);
           fetchApps(); // Refresh the list after allowing the app
-        } else {
+        } else {setError(true)
           setMessage(data.error || "Failed to allow the application");
         }
       } catch (error) {
@@ -57,13 +60,13 @@ export default function App_list() {
     }, []);
   
     return (
-      <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-        <h1>Firewall Application Management</h1>
+      <div className='bg-[white] flex flex-col items-center' style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+        <h1 className='text-[30px] w-[500px]'>Firewall Application Management</h1>
         {loading ? (
           <p>Loading...</p>
         ) : (
           <>
-            <h2>Available Applications</h2>
+            <h2 className='text-[20px] mt-[20px]'>Available Applications</h2>
             <select
               value={selectedApp}
               onChange={(e) => setSelectedApp(e.target.value)}
@@ -95,7 +98,7 @@ export default function App_list() {
             </button>
           </>
         )}
-        {message && <p style={{ marginTop: "20px", color: "red" }}>{message}</p>}
+        {message && <p style={{ marginTop: "20px" }} className={`${error?"text-red-700":"text-green-700"}`}>{message}</p>}
       </div>
     );
 }

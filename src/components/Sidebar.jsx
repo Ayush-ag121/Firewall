@@ -86,7 +86,7 @@ export default function Sidebar() {
           >
             <div className="flex items-center gap-3">
               <IoShieldCheckmarkOutline />
-              <span>Sites</span>
+              <span>Access ports</span>
             </div>
             <div>{isSystemModalOpenSites ? <IoIosArrowUp /> : <IoIosArrowDown />}</div>
           </button>
