@@ -79,16 +79,13 @@ export default function Allow_All_Deny_ports(){
             {denyPorts.length > 0 ? (
               denyPorts.map((port, index) => <li key={index}>{port}</li>)
             ) : (
-              <p style={{fontsize:"30px",textAlign:"center"}}>No denied ports found.</p>
+              <p className='text-[20px]' style={{fontsize:"40px",textAlign:"center"}}>No denied ports found.</p>
             )}
           </ul>
         </div>
   
-        <div className="actions m-auto bg-[white]">
-          <button onClick={allowAllPorts}>Allow All Ports</button>
-        </div>
   
-        <div className="flex flex-row justify-center items-center bg-[white]">
+        <div className="flex flex-row justify-center w-[100%] items-center bg-[white]">
           <input
             type="text"
             placeholder="Enter port to deny"
@@ -96,6 +93,9 @@ export default function Allow_All_Deny_ports(){
             onChange={(e) => setPortToDeny(e.target.value)}
           />
           <button onClick={denyPort}>Deny Port</button>
+        {/* <div className="actions m-auto bg-[white]"> */}
+          <button onClick={allowAllPorts}>Allow All Ports</button>
+        {/* </div> */}
         </div>
       </div>
     );

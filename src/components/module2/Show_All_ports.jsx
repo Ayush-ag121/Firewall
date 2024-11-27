@@ -55,21 +55,21 @@ export default function Show_All_ports() {
         <p>Loading...</p>
       ) : (
         <>
-          <h2 className='text-[20px]'>Rules</h2>
+          <h2 className='text-[30px]'>Rules</h2>
           {parsedRules.length > 0 ? (
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
               <thead>
                 <tr>
-                  <th style={{ border: "1px solid #ddd", padding: "8px" }}>Port</th>
-                  <th style={{ border: "1px solid #ddd", padding: "8px" }}>Action</th>
-                  <th style={{ border: "1px solid #ddd", padding: "8px" }}>From</th>
+                  <th style={{ border: "1px solid #ddd", padding: "8px" ,fontSize:"25px"}}>Port</th>
+                  <th style={{ border: "1px solid #ddd", padding: "8px" ,fontSize:"25px" }}>Action</th>
+                  <th style={{ border: "1px solid #ddd", padding: "8px" ,fontSize:"25px" }}>From</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody  className='text-[20px]'>
                 {parsedRules.map((rule, index) => (
                   <tr key={index}>
-                    <td style={{ border: "1px solid #ddd", padding: "8px" }}>{rule.port}</td>
-                    <td style={{ border: "1px solid #ddd", padding: "8px" }}>{rule.action}</td>
+                    <td style={{ border: "1px solid #ddd", padding: "8px",fontSIze:"20px",fontWeight:"bold" }}>{rule.port}</td>
+                    <td style={{ border: "1px solid #ddd", padding: "8px" ,fontWeight:"bold"}} className={`${rule.action=="DENY"?"text-red-700":"text-green-700"}`}>{rule.action}</td>
                     <td style={{ border: "1px solid #ddd", padding: "8px" }}>{rule.from}</td>
                   </tr>
                 ))}

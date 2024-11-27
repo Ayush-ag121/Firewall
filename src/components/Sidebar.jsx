@@ -56,7 +56,7 @@ export default function Sidebar() {
             alt="logo"
             className="w-6 h-6"
           />
-          <h1 className="text-xl font-bold">SafeLine WAF</h1>
+          <h1 className="text-xl font-bold">Firewall</h1>
         </div>
 
         <div className="flex flex-col mt-6 gap-1">

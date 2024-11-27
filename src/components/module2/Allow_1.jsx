@@ -39,7 +39,7 @@ export default function Allow_1() {
   },[responseMessage,errorMessage])
   return (
     <div className="App">
-      <h1>Allow Port Through Firewall</h1>
+      <h1 className='text-[30px]'>Allow Port Through Firewall</h1>
 
       <form onSubmit={handleSubmit} className="form-container">
         <label htmlFor="port">Enter Port Number:</label>
