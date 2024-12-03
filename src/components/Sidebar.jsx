@@ -14,14 +14,14 @@ import { LiaToolsSolid } from "react-icons/lia";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { useState } from "react";
-import { useLocation } from "react-router-dom"; // Import useLocation
+import { useLocation, useNavigate } from "react-router-dom"; // Import useLocation
 
 export default function Sidebar() {
   const [isSystemModalOpenSites, setisSystemModalOpenSites] = useState(false);
   const [isProtectionOpenDropdown, setIsProtectionDropdown] = useState(false);
   const [sitesDropValue, setSitesDropValue] = useState(0);
   const [isSystemModalOpen, setSystemModalOpen] = useState(false); // State for modal
-
+  let navigate = useNavigate()
   const location = useLocation(); // Get the current location
 
   const toggleDropdownSites = () => {
@@ -60,37 +60,68 @@ export default function Sidebar() {
         </div>
 
         <div className="flex flex-col mt-6 gap-1">
-          <a
-            href="/dashboard"
-            className={`flex items-center gap-3 w-full ${isActive('/dashboard')} rounded-md p-4 ease-in duration-100`}
-            onClick={toogleOtherComponents}
+          <div
+                      onClick={()=>navigate('module2')}
+                      className={`flex items-center gap-3 w-full ${isActive('/dashboard')} rounded-md p-4 ease-in duration-100`}
           >
             <TfiBarChartAlt />
-            <span>Dashboard</span>
-          </a>
+            <span>Allow And Deny Specific and ALl ports</span>
+          </div>
 
-          <a
-            href="#"
-            className={`flex items-center gap-3 w-full ${isActive('/events')} rounded-md p-4 ease-in duration-100`}
-            onClick={toogleOtherComponents}
+          <div
+                      onClick={()=>navigate('module3')}
+                      className={`flex items-center gap-3 w-full ${isActive('/events')} rounded-md p-4 ease-in duration-100`}
+            // onClick={toogleOtherComponents}
           >
             <GrNotes />
-            <span>Events</span>
-          </a>
+            <span>Speicific and Range Ip Blocking</span>
+          </div>
 
           {/* Sites Dropdown */}
-          <button
-            type="button"
-            className={`flex items-center gap-3 w-full ${isActive('/sites')} rounded-md p-4 ease-in duration-100`}
-            onClick={toggleDropdownSites}
-          >
-            <div className="flex items-center gap-3">
-              <IoShieldCheckmarkOutline />
-              <span>Access ports</span>
-            </div>
-            <div>{isSystemModalOpenSites ? <IoIosArrowUp /> : <IoIosArrowDown />}</div>
-          </button>
+          <div
+                      onClick={()=>navigate('module4')}
 
+            className={`flex items-center gap-3 w-full ${isActive('/events')} rounded-md p-4 ease-in duration-100`}
+            // onClick={toogleOtherComponents}
+          >
+            <GrNotes />
+            <span>Module4</span>
+          </div>
+          <a
+            onClick={()=>navigate('module5')}
+            className={`flex items-center gap-3 w-full ${isActive('/events')} rounded-md p-4 ease-in duration-100`}
+            // onClick={toogleOtherComponents}
+          >
+            <GrNotes />
+            <span>Module5</span>
+          </a>
+          <div
+            // href="/module6"
+            onClick={()=>navigate('module6')}
+            className={`flex items-center gap-3 w-full ${isActive('/events')} rounded-md p-4 ease-in duration-100`}
+            // onClick={toogleOtherComponents}
+          >
+            <GrNotes />
+            <span>Module6</span>
+          </div>
+          <div
+            // href="/module6"
+            onClick={()=>navigate('module8')}
+            className={`flex items-center gap-3 w-full ${isActive('/events')} rounded-md p-4 ease-in duration-100`}
+            // onClick={toogleOtherComponents}
+          >
+            <GrNotes />
+            <span>Module8</span>
+          </div>
+          <div
+            // href="/module6"
+            onClick={()=>navigate('module9')}
+            className={`flex items-center gap-3 w-full ${isActive('/events')} rounded-md p-4 ease-in duration-100`}
+            // onClick={toogleOtherComponents}
+          >
+            <GrNotes />
+            <span>Module9</span>
+          </div>
           <div
             className={`overflow-hidden ease-in-out duration-500 ${
               isSystemModalOpenSites ? "max-h-40" : "max-h-0" 
@@ -175,39 +206,10 @@ export default function Sidebar() {
             </div>
           </button>
 
-          <a
-            href="#"
-            className={`flex items-center gap-3 w-full ${isActive('/system')} rounded-md p-4 ease-in duration-100`}
-            onClick={toggleSystemModal} // Trigger modal
-          >
-            <IoSettingsOutline />
-            <span>System</span>
-          </a>
+        
         </div>
 
-        {/* Bottom Section */}
-        <div className="absolute bottom-0 mb-4 flex flex-col gap-1 w-inherit">
-          <span className="bg-white ml-4 rounded-full px-2 courier-prime-regular cursor-default">Version 5.0.0</span>
-          <div className="flex flex-col mt-1 gap-1">
-            <a
-              href="#"
-              className={`flex items-center gap-3 w-full ${isActive('/homepage')} rounded-md px-4 py-2 ease-in duration-100`}
-              onClick={toogleOtherComponents}
-            >
-              <GiBrokenShield />
-              <span>Homepage</span>
-            </a>
-
-            <a
-              href="#"
-              className={`flex items-center gap-3 w-full ${isActive('/documentation')} rounded-md px-4 py-2 ease-in duration-100`}
-              onClick={toogleOtherComponents}
-            >
-              <CgNotes />
-              <span>Documentation</span>
-            </a>
-          </div>
-        </div>
+       
       </div>
 
       {/* PopUp Window */}

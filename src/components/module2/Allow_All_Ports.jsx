@@ -32,6 +32,7 @@ export default function Allow_All_Ports() {
         const data = await response.json();
         if (response.ok) {
           setMessage(data.message);
+          console.log(response.ok)
           fetchDeniedPorts(); // Refresh the list after allowing ports
         } else {
           setMessage(data.message || "Failed to allow ports");

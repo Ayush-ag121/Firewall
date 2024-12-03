@@ -9,6 +9,20 @@ import App_list from './module2/App_list';
 import Show_All_ports from './module2/Show_All_ports';
 import Block_range_of_ip from './module3/Block_range_of_ip';
 import Block_specific_ip from './module3/Block_specific_ip';
+import Default_policy from './module4/Default_policy';
+import EnableDisable from './module4/Enable-Disable';
+import Ipv6_Support from './module4/Ipv6_support';
+import Log_read from './module5/Log_read';
+import Logging_policy from './module5/Loggin_policy';
+import AIT_Specific_Interface_From_Ip from './module6/AIT_to_Specific_Interface_from_ip';
+import AIT_to_specific_port_from_specific_ip from './module6/AIT_to_specific_port_to_specific_ip';
+import Allow_out_traffic_to_ip from './module6/Allow_out_traffic_to_specific_ip';
+import Allow_out_trffic_to_specific_ip_to_port from './module6/Allow_out_trffic_to_specific_ip_to_port';
+import Deny_Incoming_Traffic_to_Specific_Interface_from_Specific_IP_Address from './module6/Deny-Incoming-Traffic-to-Specific-Interface-from-Specific-IP-Address';
+import Deny_Incoming_Traffic_to_Specific_Port_from_Specific_IP_Address from './module6/Deny-Incoming-Traffic-to-Specific-Port-from-Specific-IP-Address';
+import Deny_Outgoing_Traffic_to_Specific_IP_Address from './module6/Deny-Outgoing-Traffic-to-Specific-IP-Address';
+import Deny_Outgoing_Traffic_to_Specific_IP_on_Specific_Port from './module6/Deny-Outgoing-Traffic-to-Specific-IP-on-Specific-Port';
+import Deny_traffic_from_range_of_Ip_address from './module6/Deny_traffic_from_range_of_Ip_address';
 
 const Datatable = () => {
   // const [deniedPorts, setDeniedPorts] = useState([]);
@@ -111,17 +125,45 @@ const Datatable = () => {
     //   </div>
     // </div>
     <>
-  <h1 style={{fontSize:"40px"}}>Access Ports</h1>
+  {/* <h1 style={{fontSize:"40px"}}>Access Ports</h1>
       <Allow_1/>
       <h1 style={{fontSize:"40px"}}>Ports Manager</h1>
-      <Allow_All_Deny_ports/>
+      <Allow_All_Deny_ports/> */}
       {/* <Allow_All_Ports/> */}
-      <App_list/>
-      <Show_All_ports/>
+      {/* <App_list/>
+      <Show_All_ports/> */}
+
+
+
 
 
       {/* <Block_range_of_ip/>
       <Block_specific_ip/> */}
+        {/* <Block_specific_ip/> */}
+        {/* <Block_range_of_ip/> */}
+
+
+      {/* // module 4 */}
+      {/* <Default_policy/>
+      <EnableDisable/>
+      <Ipv6_Support/> */}
+
+
+      {/* // module 5 */}
+      {/* <Log_read/>
+      <Logging_policy/> */}
+
+
+      {/* Module 6 */}
+        {/* <AIT_Specific_Interface_From_Ip/>
+        <AIT_to_specific_port_from_specific_ip/>
+        <Allow_out_traffic_to_ip/>
+        <Allow_out_trffic_to_specific_ip_to_port/>
+        <Deny_Incoming_Traffic_to_Specific_Interface_from_Specific_IP_Address/>
+        <Deny_Incoming_Traffic_to_Specific_Port_from_Specific_IP_Address/>
+        <Deny_Outgoing_Traffic_to_Specific_IP_Address/>
+        <Deny_Outgoing_Traffic_to_Specific_IP_on_Specific_Port/>
+        <Deny_traffic_from_range_of_Ip_address/> */}
     </>
   );
 };
