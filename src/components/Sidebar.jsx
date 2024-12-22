@@ -89,7 +89,7 @@ export default function Sidebar() {
             // onClick={toogleOtherComponents}
           >
             <GrNotes />
-            <span>Loggin and Monitoring</span>
+            <span>Logging and Monitoring</span>
           </a>
           <div
             // href="/module6"

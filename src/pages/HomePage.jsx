@@ -21,8 +21,6 @@ export default function HomePage() {
       </section>
 
       <section className="flex-grow bg-white">
-      {location.pathname.includes("/") && <Module2 />}
-
       {location.pathname.includes("/module2") && <Module2 />}
       {location.pathname.includes("/module3") && <Module3 />}
       {location.pathname.includes("/module4") && <Module4 />}
