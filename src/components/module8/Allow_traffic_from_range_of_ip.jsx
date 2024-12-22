@@ -15,10 +15,12 @@ const Allow_traffic_from_range_of_ip = () => {
   };
 
   return (
-    <div>
-      <h2>Allow Traffic from a Subnet or Range of IP Addresses</h2>
+    <div style={{marginBottom:"50px"}}>
+      <h2 style={{fontSize:"20px"}}>Allow Traffic from a Subnet or Range of IP Addresses</h2>
+      <div style={{display:"flex",justifyContent:"center"}} >
+
       <label>
-        IP Range/Subnet (e.g., 192.168.1.0/24 or 192.168.1.1-192.168.1.255):
+        IP Range/Subnet 
         <input
           type="text"
           value={ipRange}
@@ -27,6 +29,7 @@ const Allow_traffic_from_range_of_ip = () => {
         />
       </label>
       <button onClick={handleAllowSubnet}>Allow Subnet</button>
+      </div>
       {message && <p>{message}</p>}
     </div>
   );

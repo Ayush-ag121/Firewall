@@ -18,8 +18,8 @@ export default function Block_range_of_ip() {
     };
   
     return (
-      <div className="App">
-        <h1>IP Blocker</h1>
+      <div className="App flex" style={{display:"flex",gap:"20px",flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
+        <h1 style={{marginTop:"0px"}}> Range IP Blocker</h1>
         <div>
           <input
             type="text"

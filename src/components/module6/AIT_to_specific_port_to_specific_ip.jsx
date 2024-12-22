@@ -28,9 +28,9 @@ function AIT_to_specific_port_from_specific_ip() {
 
   return (
     <div className="App" style={{ padding: '20px' }}>
-      <h1>Allow Incoming Traffic on Specific Port from Specific IP</h1>
+      <h1 style={{fontSize:"30px"}}>Allow Incoming Traffic on Specific Port from Specific IP</h1>
 
-      <div className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
+      <div style={{display:"flex",gap:"30px",flexDirection:"row",justifyContent:"center",alignItems:"center"}}  className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
         <label>Enter IP Address: </label>
         <input
           type="text"
@@ -41,7 +41,7 @@ function AIT_to_specific_port_from_specific_ip() {
         />
       </div>
 
-      <div className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
+      <div style={{display:"flex",gap:"30px",flexDirection:"row",justifyContent:"center",alignItems:"center"}}  className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
         <label>Enter Port Number: </label>
         <input
           type="text"

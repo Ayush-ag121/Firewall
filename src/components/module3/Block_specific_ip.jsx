@@ -10,7 +10,7 @@ export default function Block_specific_ip() {
       setResponse('');
       setError('');
   
-      const endpoint = isRange ? '/block-ip' : '/block-ip-single';
+      const endpoint = isRange ? '/api/block-ip-third' : '/api/block-ip-single';
   
       try {
         const res = await axios.post(`http://127.0.0.1:5000${endpoint}`, { ip });
@@ -21,8 +21,8 @@ export default function Block_specific_ip() {
     };
   
     return (
-      <div className="App">
-        <h1>IP Blocker</h1>
+      <div className="App flex" style={{display:"flex",gap:"20px",flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
+        <h1 style={{marginTop:"0px"}}> Single IP Blocker</h1>
         <div>
           <input
             type="text"
@@ -31,16 +31,6 @@ export default function Block_specific_ip() {
             onChange={(e) => setIp(e.target.value)}
           />
           <button onClick={handleBlockIp}>Block IP</button>
-        </div>
-        <div>
-          <label>
-            <input
-              type="checkbox"
-              checked={isRange}
-              onChange={() => setIsRange(!isRange)}
-            />
-            Block IP Range
-          </label>
         </div>
         {response && <p className="success">{response}</p>}
         {error && <p className="error">{error}</p>}

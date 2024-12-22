@@ -26,9 +26,9 @@ function Allow_out_traffic_to_ip() {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Allow Outgoing Traffic to Specific IP</h1>
+      <h1 style={{fontSize:"30px"}}>Allow Outgoing Traffic to Specific IP</h1>
 
-      <div className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
+      <div style={{display:"flex",gap:"30px",flexDirection:"row",justifyContent:"center",alignItems:"center"}}  className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
         <label>Enter IP Address: </label>
         <input
           type="text"

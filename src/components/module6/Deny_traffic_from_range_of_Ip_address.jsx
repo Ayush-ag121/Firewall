@@ -27,9 +27,9 @@ function Deny_traffic_from_range_of_Ip_address() {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Deny Traffic from a Subnet or Range of IP Addresses</h1>
+      <h1 style={{fontSize:"30px"}}>Deny Traffic from a Subnet or Range of IP Addresses</h1>
 
-      <div className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
+      <div style={{display:"flex",gap:"30px",flexDirection:"row",justifyContent:"center",alignItems:"center"}}  className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
         <label>IP Range/Subnet: </label>
         <input
           type="text"

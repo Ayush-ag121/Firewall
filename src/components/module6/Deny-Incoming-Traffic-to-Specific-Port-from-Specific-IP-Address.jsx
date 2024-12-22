@@ -29,9 +29,9 @@ function Deny_Incoming_Traffic_to_Specific_Port_from_Specific_IP_Address() {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Deny Incoming Traffic to Specific Port from a Specific IP</h1>
+      <h1 style={{fontSize:"30px"}}>Deny Incoming Traffic to Specific Port from a Specific IP</h1>
 
-      <div className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
+      <div style={{display:"flex",gap:"30px",flexDirection:"row",justifyContent:"center",alignItems:"center"}}  className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
         <label>IP Address: </label>
         <input
           type="text"
@@ -42,7 +42,7 @@ function Deny_Incoming_Traffic_to_Specific_Port_from_Specific_IP_Address() {
         />
       </div>
 
-      <div className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
+      <div style={{display:"flex",gap:"30px",flexDirection:"row",justifyContent:"center",alignItems:"center"}}  className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
         <label>Port Number: </label>
         <input
           type="text"

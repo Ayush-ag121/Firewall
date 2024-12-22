@@ -9,6 +9,7 @@ import Module5 from "../components/Module5";
 import Module6 from "../components/Module6";
 import Module8 from "../components/Module8";
 import Module9 from "../components/Module9";
+import SSHBlocker from "../components/SSHBlocker";
 
 export default function HomePage() {
   const location = useLocation();
@@ -30,6 +31,8 @@ export default function HomePage() {
 
       {location.pathname.includes("/dashboard") && <Dashboard />}
       {location.pathname.includes("/sites") && <Datatable />}
+      {location.pathname.includes("/sshblocker") && <SSHBlocker />}
+
       </section>
     </div>
   );

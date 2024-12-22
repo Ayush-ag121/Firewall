@@ -50,7 +50,7 @@ export default function Show_All_ports() {
     .filter((rule) => rule); // Remove null values
 
   return (
-    <div className='bg-white' style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+    <div className='mb-8 bg-white' style={{ padding: "20px",marginBottom:"50px", fontFamily: "Arial, sans-serif" }}>
       <h1 style={{fontSize:"40px"}}>Firewall Status</h1>
       {loading ? (
         <p>Loading...</p>
@@ -58,7 +58,7 @@ export default function Show_All_ports() {
         <>
           <h2 className='text-[30px]'>Rules</h2>
           {parsedRules.length > 0 ? (
-            <table style={{ width: "100%", borderCollapse: "collapse" }}>
+            <table style={{ width: "100%", borderCollapse: "collapse",marginBottom:"60px" }}>
               <thead>
                 <tr>                  <th style={{ border: "1px solid #ddd", padding: "2px" ,fontSize:"25px"}}>Number</th>
 
@@ -70,7 +70,7 @@ export default function Show_All_ports() {
               <tbody  className='text-[20px]'>
                 {parsedRules.map((rule, index) => (
                   <tr key={index}>                    
-                  <td style={{ border: "1px solid #ddd", padding: "2px",fontSIze:"20px",fontWeight:"bold" }}>{rule.port.substring(2,3)}</td>
+                  <td style={{ border: "1px solid #ddd", padding: "2px",fontSIze:"20px",fontWeight:"bold" ,textAlign:"center"}}>{rule.port.substring(2,3)}</td>
 
                     <td style={{ border: "1px solid #ddd", padding: "8px",fontSIze:"20px",fontWeight:"bold" }}>{rule.port.substring(5,)}</td>
                     <td style={{ border: "1px solid #ddd", padding: "8px" ,fontWeight:"bold"}} className={`${rule.action.split(' ').includes("DENY")?"text-red-700":"text-green-700"}`}>{rule.action}</td>

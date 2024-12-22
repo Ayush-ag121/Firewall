@@ -15,8 +15,10 @@ const Deny_incoming_traffic_from_specific_ip_address = () => {
   };
 
   return (
-    <div>
-      <h2>Deny Incoming Traffic from a Specific IP Address</h2>
+    <div style={{marginBottom:"30px"}}>
+      <h2 style={{fontSize:"20px"}}>Deny Incoming Traffic from a Specific IP Address</h2>
+     <div style={{display:"flex",justifyContent:"center"}} >
+
       <label>
         IP Address:
         <input
@@ -27,6 +29,7 @@ const Deny_incoming_traffic_from_specific_ip_address = () => {
         />
       </label>
       <button onClick={handleDenyIP}>Deny IP</button>
+     </div>
       {message && <p>{message}</p>}
     </div>
   );

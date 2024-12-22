@@ -21,13 +21,14 @@ function Logging_policy() {
 
   return (
     <div className="App" style={{ padding: '20px' }}>
-      <h1>Set UFW Logging Level</h1>
+      <h1 style={{fontSize:"20px"}}>Set UFW Logging Level</h1>
+     <div style={{display:"flex",gap:"30px",alignItems:"center"}}>
       <label>
         Choose Logging Level:
         <select
           value={loggingLevel}
           onChange={(e) => setLoggingLevel(e.target.value)}
-          style={{ marginLeft: '10px' }}
+          style={{ marginLeft: '10px',padding:"10px" }}
         >
           <option value="">--Select--</option>
           <option value="off">Off</option>
@@ -40,6 +41,7 @@ function Logging_policy() {
       <button onClick={handleSetLogging} style={{ marginLeft: '10px' }}>
         Set Logging
       </button>
+      </div>
       {responseMessage && <p style={{ color: 'green' }}>{responseMessage}</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>

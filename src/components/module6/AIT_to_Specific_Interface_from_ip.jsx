@@ -47,11 +47,11 @@ function AIT_Specific_Interface_From_Ip() {
 
   return (
     <div className="App" style={{ padding: '20px' }}>
-      <h1>Allow Incoming Traffic to Interface from Specific IP</h1>
+      <h1 style={{fontSize:"30px"}}>Allow Incoming Traffic to Interface from Specific IP</h1>
 
-      <div className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
+      <div style={{display:"flex",gap:"30px",flexDirection:"row",justifyContent:"center",alignItems:"center"}} className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
         <label>Choose Network Interface: </label>
-        <select value={interfaceInput} onChange={(e) => setInterfaceInput(e.target.value)} style={{ marginLeft: '10px' }}>
+        <select  value={interfaceInput} onChange={(e) => setInterfaceInput(e.target.value)} style={{ padding:"10px",marginLeft: '10px' }}>
           <option value="">--Select--</option>
           {interfaces.map((interface1) => (
             <option key={interface1} value={interface1}>{interface1}</option>
@@ -59,7 +59,7 @@ function AIT_Specific_Interface_From_Ip() {
         </select>
       </div>
 
-      <div className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
+      <div style={{display:"flex",gap:"30px",flexDirection:"row",justifyContent:"center",alignItems:"center"}}  className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
         <label>Enter IP Address: </label>
         <input
           type="text"

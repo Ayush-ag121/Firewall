@@ -15,8 +15,10 @@ const Allow_incoming_traffic_from_incoming_ipAllowIP = () => {
   };
 
   return (
-    <div>
-      <h2>Allow Incoming Traffic from a Specific IP Address</h2>
+    <div style={{marginBottom:"50px"}}>
+      <h2 style={{fontSize:"20px"}}>Allow Incoming Traffic from a Specific IP Address</h2>
+      <div style={{display:"flex",justifyContent:"center"}} >
+
       <label>
         IP Address:
         <input
@@ -27,6 +29,7 @@ const Allow_incoming_traffic_from_incoming_ipAllowIP = () => {
         />
       </label>
       <button onClick={handleAllowIP}>Allow IP</button>
+      </div>
       {message && <p>{message}</p>}
     </div>
   );

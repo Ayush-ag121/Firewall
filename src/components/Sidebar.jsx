@@ -122,6 +122,15 @@ export default function Sidebar() {
             <GrNotes />
             <span>Module9</span>
           </div>
+          {/* <div
+            // href="/module6"
+            onClick={()=>navigate('sshblocker')}
+            className={`flex items-center gap-3 w-full ${isActive('/events')} rounded-md p-4 ease-in duration-100`}
+            // onClick={toogleOtherComponents}
+          >
+            <GrNotes />
+            <span>SSH Blocker</span>
+          </div> */}
           <div
             className={`overflow-hidden ease-in-out duration-500 ${
               isSystemModalOpenSites ? "max-h-40" : "max-h-0" 

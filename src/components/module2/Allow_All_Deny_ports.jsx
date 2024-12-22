@@ -12,22 +12,13 @@ export default function Allow_All_Deny_ports(){
     // Fetch denied ports
     const fetchDenyPorts = async () => {
       try {
-        let set = new Set()
-        let response = await fetch('http://127.0.0.1:5000/api/list-deny-ports', {
-            method: 'GET',
-          });
-          response = await response.json()
-          for(let i of response.deny_ports){
-           i!=="Anywhere" &&  set.add(i)
-          }
-          let arr = []
-          for(let i of set){
-            arr.push(i)
-          }
-          console.log(arr)
-        setDenyPorts(arr || []);
+        const response = await fetch(`${API_BASE_URL}/list-deny-ports`);
+        const data = await response.json();
+        
+        // Directly set denied ports from response
+        setDenyPorts(data.deny_ports || []);
       } catch (err) {
-        console.log(err)
+        console.log(err);
         setError("Failed to fetch denied ports.");
       }
     };

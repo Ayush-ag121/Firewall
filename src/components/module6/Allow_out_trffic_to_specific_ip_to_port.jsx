@@ -28,9 +28,9 @@ function Allow_out_trffic_to_specific_ip_to_port() {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Allow Outgoing Traffic to Specific IP on Specific Port</h1>
+      <h1 style={{fontSize:"30px"}}>Allow Outgoing Traffic to Specific IP on Specific Port</h1>
 
-      <div className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
+      <div style={{display:"flex",gap:"30px",flexDirection:"row",justifyContent:"center",alignItems:"center"}}  className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
         <label>IP Address: </label>
         <input
           type="text"
@@ -41,7 +41,7 @@ function Allow_out_trffic_to_specific_ip_to_port() {
         />
       </div>
 
-      <div className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
+      <div style={{display:"flex",gap:"30px",flexDirection:"row",justifyContent:"center",alignItems:"center"}}  className='w-[100%] flex flex-col items-center mt-[30px] gap-[40px]'>
         <label>Port Number: </label>
         <input
           type="text"

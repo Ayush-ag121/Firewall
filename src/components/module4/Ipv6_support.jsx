@@ -18,7 +18,7 @@ function Ipv6_Support() {
 
   return (
     <div className="App" style={{ padding: '20px' }}>
-      <h1>UFW IPv6 Configuration</h1>
+      <h1 style={{fontSize:"30px"}}>UFW IPv6 Configuration</h1>
 
       <label>
         Enter New IPv6 Value:

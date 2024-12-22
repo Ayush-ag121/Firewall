@@ -37,11 +37,13 @@ function Default_policy() {
 
   return (
     <div className="App" style={{ padding: '20px' }}>
-      <h1>UFW Configuration Dashboard</h1>
+      <h1 style={{fontSize:"30px",marginBottom:"20px"}}> UFW Configuration Dashboard</h1>
+    <div style={{display:"flex",gap:"30px"}}>
 
       <button onClick={fetchStatus}>Fetch UFW Status</button>
       <button onClick={setDefaultDeny} style={{ marginLeft: '10px' }}>Set Default Deny</button>
       <button onClick={setDefaultAllow} style={{ marginLeft: '10px' }}>Set Default Allow</button>
+    </div>
 
       <h2>Status:</h2>
       <pre>{status}</pre>

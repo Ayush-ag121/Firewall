@@ -16,9 +16,9 @@ function Allow_inbound_http_traffic() {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h2>Allow Inbound HTTP Traffic</h2>
-      <form onSubmit={handleSubmit}>
+    <div style={{ padding: '20px',marginBottom:"30px" }}>
+      <h2 style={{fontSize:"20px"}}>Allow Inbound HTTP Traffic</h2>
+      <form style={{display:"flex",justifyContent:"center"}} onSubmit={handleSubmit}>
         <label>
           Port Number:
           <input
