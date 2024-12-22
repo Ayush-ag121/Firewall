@@ -51,12 +51,8 @@ export default function Sidebar() {
     <>
       <div className="w-52 h-full p-4 relative overflow-hidden">
         <div className="flex items-center gap-1 cursor-pointer">
-          <img
-            src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg?size=338&ext=jpg&ga=GA1.1.1819120589.1727740800&semt=ais_hybrid"
-            alt="logo"
-            className="w-6 h-6"
-          />
-          <h1 className="text-xl font-bold">Firewall</h1>
+
+          <h1 className="text-xl font-bold">Friendly Firewall</h1>
         </div>
 
         <div className="flex flex-col mt-6 gap-1">
@@ -65,7 +61,7 @@ export default function Sidebar() {
                       className={`flex items-center gap-3 w-full ${isActive('/dashboard')} rounded-md p-4 ease-in duration-100`}
           >
             <TfiBarChartAlt />
-            <span>Allow And Deny Specific and ALl ports</span>
+            <span>Port And Protocol Filtering</span>
           </div>
 
           <div
@@ -74,7 +70,7 @@ export default function Sidebar() {
             // onClick={toogleOtherComponents}
           >
             <GrNotes />
-            <span>Speicific and Range Ip Blocking</span>
+            <span>Ip Blocking</span>
           </div>
 
           {/* Sites Dropdown */}
@@ -85,7 +81,7 @@ export default function Sidebar() {
             // onClick={toogleOtherComponents}
           >
             <GrNotes />
-            <span>Module4</span>
+            <span>Firewall and IPv6 Functioning</span>
           </div>
           <a
             onClick={()=>navigate('module5')}
@@ -93,7 +89,7 @@ export default function Sidebar() {
             // onClick={toogleOtherComponents}
           >
             <GrNotes />
-            <span>Module5</span>
+            <span>Loggin and Monitoring</span>
           </a>
           <div
             // href="/module6"
@@ -102,7 +98,7 @@ export default function Sidebar() {
             // onClick={toogleOtherComponents}
           >
             <GrNotes />
-            <span>Module6</span>
+            <span>Network Traffic Filtering</span>
           </div>
           <div
             // href="/module6"
@@ -111,7 +107,7 @@ export default function Sidebar() {
             // onClick={toogleOtherComponents}
           >
             <GrNotes />
-            <span>Module8</span>
+            <span>Default Deny Policy</span>
           </div>
           <div
             // href="/module6"
@@ -120,7 +116,7 @@ export default function Sidebar() {
             // onClick={toogleOtherComponents}
           >
             <GrNotes />
-            <span>Module9</span>
+            <span>Rules Deletion</span>
           </div>
           {/* <div
             // href="/module6"
@@ -196,24 +192,7 @@ export default function Sidebar() {
             </div>
           </div>
 
-          {/* Protection Dropdown */}
-          <button
-            type="button"
-            className={`flex items-center gap-3 w-full ${isActive('/protections')} rounded-md p-4 ease-in duration-100`}
-            onClick={toggleDropdownProtection}
-          >
-            <div className="flex items-center gap-3">
-              <LiaToolsSolid />
-              <span>Protections</span>
-            </div>
-            <div>
-              {isProtectionOpenDropdown ? (
-                <IoIosArrowDown />
-              ) : (
-                <IoIosArrowForward />
-              )}
-            </div>
-          </button>
+         
 
         
         </div>
