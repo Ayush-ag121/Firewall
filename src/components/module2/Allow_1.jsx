@@ -44,7 +44,6 @@ export default function Allow_1() {
       <form onSubmit={handleSubmit} className="form-container">
         <label htmlFor="port">Enter Port Number:</label>
         <input
-          type="number"
           id="port"
           value={port}
           onChange={(e) => setPort(e.target.value)}

@@ -5,6 +5,7 @@ import { GoDotFill } from "react-icons/go";
 import { LuDot } from "react-icons/lu";
 import { CgNotes } from "react-icons/cg";
 import { GiBrokenShield } from "react-icons/gi";
+import logo from './logo.png'
 import {
   IoIosArrowUp,
   IoIosArrowDown,
@@ -50,9 +51,9 @@ export default function Sidebar() {
   return (
     <>
       <div className="w-52 h-full p-4 relative overflow-hidden">
-        <div className="flex items-center gap-1 cursor-pointer">
-
-          <h1 className="text-xl font-bold">Friendly Firewall</h1>
+        <div style={{marginTop:"30px"}} className="flex items-center gap-1 cursor-pointer">
+          <img src={logo} style={{height:"40px",width:"40px"}}></img>
+          <h1 style={{marginTop:"0px"}} className="text-xl font-bold">Friendly Firewall</h1>
         </div>
 
         <div className="flex flex-col mt-6 gap-1">
