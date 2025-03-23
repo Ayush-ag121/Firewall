@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 function Deny_traffic_from_range_of_Ip_address() {
   const [ipRange, setIpRange] = useState('');
@@ -7,6 +8,11 @@ function Deny_traffic_from_range_of_Ip_address() {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleDenySubnet = async () => {
+    const ipRangeSubnetRegex = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/([12]?[0-9]|3[0-2])$/;
+    if(!ipRangeSubnetRegex.test(ipRange)){
+      toast.error("Please Enter Valid Ip Range")
+            return 
+    }
     try {
       const response = await axios.post('http://127.0.0.1:5000/deny-subnet', {
         ip_range: ipRange,

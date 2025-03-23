@@ -46,11 +46,11 @@ export default function Sidebar() {
   };
 
   // Function to determine if a route is active
-  const isActive = (path) => (location.pathname === path ? "bg-sea-green-p text-white" : "");
+  const isActive = (path) => (location.pathname.includes(path) ? "bg-sea-green-p text-white" : "");
 
   return (
     <>
-      <div className="w-52 h-full p-4 relative overflow-hidden">
+      <div className="  p-4 relative overflow-hidden">
         <div style={{marginTop:"30px"}} className="flex items-center gap-1 cursor-pointer">
           <img src={logo} style={{height:"40px",width:"40px"}}></img>
           <h1 style={{marginTop:"0px"}} className="text-xl font-bold">Friendly Firewall</h1>
@@ -59,7 +59,7 @@ export default function Sidebar() {
         <div className="flex flex-col mt-6 gap-1">
           <div
                       onClick={()=>navigate('module2')}
-                      className={`flex items-center gap-3 w-full ${isActive('/dashboard')} rounded-md p-4 ease-in duration-100`}
+                      className={`flex cursor-pointer items-center gap-3 w-full ${isActive('/module2')} rounded-md p-4 ease-in duration-100`}
           >
             <TfiBarChartAlt />
             <span>Port And Protocol Filtering</span>
@@ -67,7 +67,7 @@ export default function Sidebar() {
 
           <div
                       onClick={()=>navigate('module3')}
-                      className={`flex items-center gap-3 w-full ${isActive('/events')} rounded-md p-4 ease-in duration-100`}
+                      className={`flex cursor-pointer items-center gap-3 w-full ${isActive('/module3')} rounded-md p-4 ease-in duration-100`}
             // onClick={toogleOtherComponents}
           >
             <GrNotes />
@@ -78,7 +78,7 @@ export default function Sidebar() {
           <div
                       onClick={()=>navigate('module4')}
 
-            className={`flex items-center gap-3 w-full ${isActive('/events')} rounded-md p-4 ease-in duration-100`}
+            className={`flex items-center cursor-pointer gap-3 w-full ${isActive('/module4')} rounded-md p-4 ease-in duration-100`}
             // onClick={toogleOtherComponents}
           >
             <GrNotes />
@@ -86,7 +86,7 @@ export default function Sidebar() {
           </div>
           <a
             onClick={()=>navigate('module5')}
-            className={`flex items-center gap-3 w-full ${isActive('/events')} rounded-md p-4 ease-in duration-100`}
+            className={`flex items-center cursor-pointer gap-3 w-full ${isActive('/module5')} rounded-md p-4 ease-in duration-100`}
             // onClick={toogleOtherComponents}
           >
             <GrNotes />
@@ -95,7 +95,7 @@ export default function Sidebar() {
           <div
             // href="/module6"
             onClick={()=>navigate('module6')}
-            className={`flex items-center gap-3 w-full ${isActive('/events')} rounded-md p-4 ease-in duration-100`}
+            className={`flex items-center cursor-pointer gap-3 w-full ${isActive('/module6')} rounded-md p-4 ease-in duration-100`}
             // onClick={toogleOtherComponents}
           >
             <GrNotes />
@@ -104,7 +104,7 @@ export default function Sidebar() {
           <div
             // href="/module6"
             onClick={()=>navigate('module8')}
-            className={`flex items-center gap-3 w-full ${isActive('/events')} rounded-md p-4 ease-in duration-100`}
+            className={`flex items-center  cursor-pointer gap-3 w-full ${isActive('/module8')} rounded-md p-4 ease-in duration-100`}
             // onClick={toogleOtherComponents}
           >
             <GrNotes />
@@ -113,11 +113,20 @@ export default function Sidebar() {
           <div
             // href="/module6"
             onClick={()=>navigate('module9')}
-            className={`flex items-center gap-3 w-full ${isActive('/events')} rounded-md p-4 ease-in duration-100`}
+            className={`flex items-center cursor-pointer gap-3 w-full ${isActive('/module9')} rounded-md p-4 ease-in duration-100`}
             // onClick={toogleOtherComponents}
           >
             <GrNotes />
             <span>Rules Deletion</span>
+          </div>
+          <div
+            // href="/module6"
+            onClick={()=>navigate('module10')}
+            className={`flex items-center cursor-pointer gap-3 w-full ${isActive('/module10')} rounded-md p-4 ease-in duration-100`}
+            // onClick={toogleOtherComponents}
+          >
+            <GrNotes />
+            <span>SSH Protection</span>
           </div>
           {/* <div
             // href="/module6"

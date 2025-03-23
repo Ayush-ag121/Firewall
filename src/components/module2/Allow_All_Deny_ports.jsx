@@ -1,5 +1,7 @@
 import React,{useState,useEffect, useContext} from 'react'
 import axios from 'axios';
+import { toast } from 'react-toastify';
+
 import Context from '../../context/context';
 const API_BASE_URL = "http://127.0.0.1:5000/api";
 export default function Allow_All_Deny_ports(){
@@ -41,6 +43,13 @@ export default function Allow_All_Deny_ports(){
     },[message])
     // Deny a specific port
     const denyPort = async () => {
+      let regex = /^(6553[0-5]|655[0-2][0-9]|65[0-9]{2}|6[1-5][0-9]{3}|[1-9]?[0-9]{1,4})(\/(tcp|udp))?$/;
+      if(!regex.test(portToDeny)){
+
+        toast.error("Please Enter Valid Port")
+        return 
+      }
+
       try {
         const response = await axios.post(`${API_BASE_URL}/deny-port`, { port: portToDeny });
         setMessage(response.data.message);

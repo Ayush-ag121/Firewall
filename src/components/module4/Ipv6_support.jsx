@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 function Ipv6_Support() {
   const [ipv6Value, setIpv6Value] = useState('');
   const [responseMessage, setResponseMessage] = useState('');
 
   const handleUpdateIPv6 = async () => {
+    let regex = /^(yes|no)$/i;
+    if(!regex.test(ipv6Value)){
+      toast.error("Please Enter Valid IP")
+            return
+    }
     try {
       const response = await axios.post('http://127.0.0.1:5000/update-ipv6', {
         value: ipv6Value,

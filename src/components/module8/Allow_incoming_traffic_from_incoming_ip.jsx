@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Allow_incoming_traffic_from_incoming_ipAllowIP = () => {
   const [ip, setIP] = useState('');
   const [message, setMessage] = useState('');
 
   const handleAllowIP = async () => {
+    const ipAddressRegex = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    if(!ipAddressRegex.test(ip)){
+      toast.error("Please Enter Valid IP")
+            return
+    }
     try {
       const response = await axios.post('http://localhost:5000/allow-ip-module8', { ip });
       setMessage(response.data.message);

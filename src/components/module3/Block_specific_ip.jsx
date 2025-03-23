@@ -1,5 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios';
+import { toast } from 'react-toastify';
+
 export default function Block_specific_ip() {
     const [ip, setIp] = useState('');
     const [response, setResponse] = useState('');
@@ -9,7 +11,19 @@ export default function Block_specific_ip() {
     const handleBlockIp = async () => {
       setResponse('');
       setError('');
-  
+      let single_regex = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+      let range_regex =  /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/([12]?[0-9]|3[0-2])$/;
+      if(isRange){
+        if(!range_regex.test(ip)){
+          toast.error("Please Enter Valid IP Range")
+                return
+        }
+      }else{
+        if(!single_regex.test(ip)){
+          toast.error("Please Enter Valid IP")
+                return 
+        }
+      }
       const endpoint = isRange ? '/api/block-ip-third' : '/api/block-ip-single';
   
       try {

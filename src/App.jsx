@@ -12,6 +12,8 @@ import Module6 from "./components/Module6";
 import Module9 from "./components/Module9";
 import Module8 from "./components/Module8";
 import SSHBlocker from "./components/SSHBlocker";
+import Module10 from "./components/module10";
+import { ToastContainer } from "react-toastify";
 
 export default function App() {
   let [render,setRender] = useState(0)
@@ -28,12 +30,15 @@ export default function App() {
           <Route path="module6" element={<Module6 />} />
           <Route path="module8" element={<Module8 />} />
           <Route path="module9" element={<Module9 />} />
+          <Route path="module10" element={<Module10 />} />
+
           <Route path="sshblocker" element={<SSHBlocker />} />
 
           <Route path="sites" element={<Datatable />} />
         </Route>
       </Routes>
     </Router>
+    <ToastContainer />
     </Context.Provider>
   );
 }

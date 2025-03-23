@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 function Allow_inbound_http_traffic() {
   const [port, setPort] = useState('');
   const [responseMessage, setResponseMessage] = useState('');
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
+    const portNumberRegex = /^(6553[0-5]|655[0-2][0-9]{2}|65[0-4][0-9]{3}|6[0-4][0-9]{4}|[1-9][0-9]{0,3})$/;
+    if(!portNumberRegex.test(port)){
+      toast.error("Please Enter Valid Port")
+            return
+    }
     try {
       const response = await axios.post('http://localhost:5000/allow-http-port', { port });
       setResponseMessage(response.data.message);

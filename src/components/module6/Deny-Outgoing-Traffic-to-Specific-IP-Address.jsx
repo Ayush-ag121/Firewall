@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 function Deny_Outgoing_Traffic_to_Specific_IP_Address() {
   const [ip, setIp] = useState('');
@@ -8,6 +9,12 @@ function Deny_Outgoing_Traffic_to_Specific_IP_Address() {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleDenyOutgoingTraffic = async () => {
+    const ipAddressRegex = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    const portNumberRegex = /^(6553[0-5]|655[0-2][0-9]{2}|65[0-4][0-9]{3}|6[0-4][0-9]{4}|[1-9][0-9]{0,3})$/;
+    if(!ipAddressRegex.test(ip) || !portNumberRegex.test(port)){
+      toast.error("Please Enter Valid IP or port")
+            return
+    }
     try {
       const response = await axios.post('http://127.0.0.1:5000/deny-outgoing-port-ip', {
         ip: ip,

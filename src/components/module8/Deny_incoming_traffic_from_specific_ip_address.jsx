@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Deny_incoming_traffic_from_specific_ip_address = () => {
   const [ipAddress, setIpAddress] = useState('');
   const [message, setMessage] = useState('');
 
   const handleDenyIP = async () => {
+    const ipAddressRegex = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    if(!ipAddressRegex.test(ipAddress)){
+      toast.error("Please Enter Valid IP Address")
+            return
+    }
     try {
       const response = await axios.post('http://localhost:5000/deny-ip-module8', { ip_address: ipAddress });
       setMessage(response.data.message);

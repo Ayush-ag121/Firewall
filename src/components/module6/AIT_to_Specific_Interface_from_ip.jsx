@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 function AIT_Specific_Interface_From_Ip() {
   const [interfaces, setInterfaces] = useState([]);
@@ -27,6 +28,11 @@ function AIT_Specific_Interface_From_Ip() {
   }, []);
 
   const handleAllowIP = async () => {
+    const ipAddressRegex = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    if(!ipAddressRegex.test(ipInput)){
+      toast.error("Please Enter Valid IP")
+            return
+    }
     try {
       const response = await axios.post('http://127.0.0.1:5000/allow-ip-module6', {
         interface: interfaceInput,

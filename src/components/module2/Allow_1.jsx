@@ -1,5 +1,6 @@
 import React,{useState,useEffect, useContext} from 'react'
 import Context from '../../context/context';
+import { toast } from 'react-toastify';
 
 export default function Allow_1() {
   const [port, setPort] = useState('');
@@ -8,25 +9,34 @@ export default function Allow_1() {
   const [errorMessage, setErrorMessage] = useState(null);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+    const regex = /^(6553[0-5]|655[0-2][0-9]|65[0-9]{2}|6[1-5][0-9]{3}|[1-9]?[0-9]{1,4})(\/(tcp|udp))?$/;
+    if(!regex.test(port)){
+      toast.error("Please Enter Valid Port")
+      return
+    }
     // Send POST request to Flask API
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/allow-port', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ port }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setResponseMessage(data.message);
-        setErrorMessage(null);
-      } else {
-        setErrorMessage(data.error);
-        setResponseMessage(null);
+      if(regex.test(port)){
+        const response = await fetch('http://127.0.0.1:5000/api/allow-port', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ port }),
+        });
+  
+        const data = await response.json();
+  
+        if (response.ok) {
+          setResponseMessage(data.message);
+          setErrorMessage(null);
+        } else {
+          setErrorMessage(data.error);
+          setResponseMessage(null);
+        }
+      }else{
+        toast.error("Please Enter Valid Port")
+        return
       }
     } catch (error) {
       setErrorMessage('Failed to connect to the server');
@@ -34,9 +44,7 @@ export default function Allow_1() {
     }
     setRender(value=>value+1)
   };
-  useEffect(()=>{
 
-  },[responseMessage,errorMessage])
   return (
     <div className="App">
       <h1 className='text-[30px]'>Allow Port Through Firewall</h1>
