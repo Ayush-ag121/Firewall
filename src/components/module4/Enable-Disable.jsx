@@ -25,11 +25,11 @@ function EnableDisable() {
 
   return (
     <div className="App" style={{ padding: '20px' }}>
-      <h1 style={{fontSize:"30px",marginBottom:"20px"}}>UFW Control Dashboard</h1>
+      <h1 style={{fontSize:"30px",marginBottom:"20px"}}> Control Dashboard</h1>
     <div style={{display:"flex",gap:"30px"}}>
 
-      <button onClick={enableUFW} style={{ marginRight: '10px' }}>Enable UFW</button>
-      <button onClick={disableUFW}>Disable UFW</button>
+      <button onClick={enableUFW} style={{ marginRight: '10px' }}>Enable Firewall</button>
+      <button onClick={disableUFW}>Disable Firewall</button>
     </div>
     <div style={{display:"flex",gap:"20px",marginTop:"20px"}}>
       <h2>Response:</h2>

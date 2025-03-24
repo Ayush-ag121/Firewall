@@ -6,8 +6,8 @@ import Ipv6_Support from './module4/Ipv6_support'
 export default function Module4() {
   return (
     <div style={{marginBottom:"60px"}}>
-        <Default_policy/>
       <EnableDisable/>
+        <Default_policy/>
       <Ipv6_Support/>
     </div>
   )

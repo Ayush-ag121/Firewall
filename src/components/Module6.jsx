@@ -8,6 +8,10 @@ import Deny_Incoming_Traffic_to_Specific_Port_from_Specific_IP_Address from './m
 import Deny_Outgoing_Traffic_to_Specific_IP_Address from './module6/Deny-Outgoing-Traffic-to-Specific-IP-Address';
 import Deny_Outgoing_Traffic_to_Specific_IP_on_Specific_Port from './module6/Deny-Outgoing-Traffic-to-Specific-IP-on-Specific-Port';
 import Deny_traffic_from_range_of_Ip_address from './module6/Deny_traffic_from_range_of_Ip_address';
+import Allow_inbound_http_traffic from './module8/Allow_inbound_http_traffic'
+import Allow_incoming_traffic_from_incoming_ip from './module8/Allow_incoming_traffic_from_incoming_ip'
+import Allow_traffic_from_range_of_ip from './module8/Allow_traffic_from_range_of_ip'
+import Deny_incoming_traffic_from_specific_ip_address from './module8/Deny_incoming_traffic_from_specific_ip_address'
 
 export default function Module6() {
   return (
@@ -21,6 +25,10 @@ export default function Module6() {
         <Deny_Outgoing_Traffic_to_Specific_IP_Address/>
         <Deny_Outgoing_Traffic_to_Specific_IP_on_Specific_Port/>
         <Deny_traffic_from_range_of_Ip_address/>
+        <Allow_inbound_http_traffic/>
+        <Allow_incoming_traffic_from_incoming_ip/>
+        <Allow_traffic_from_range_of_ip/>
+        <Deny_incoming_traffic_from_specific_ip_address/>
     </div>
   )
 }

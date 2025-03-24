@@ -82,7 +82,7 @@ export default function Sidebar() {
             // onClick={toogleOtherComponents}
           >
             <GrNotes />
-            <span>Firewall and IPv6 Functioning</span>
+            <span>Firewall Configuration</span>
           </div>
           <a
             onClick={()=>navigate('module5')}
@@ -101,7 +101,7 @@ export default function Sidebar() {
             <GrNotes />
             <span>Network Traffic Filtering</span>
           </div>
-          <div
+          {/* <div
             // href="/module6"
             onClick={()=>navigate('module8')}
             className={`flex items-center  cursor-pointer gap-3 w-full ${isActive('/module8')} rounded-md p-4 ease-in duration-100`}
@@ -109,7 +109,7 @@ export default function Sidebar() {
           >
             <GrNotes />
             <span>Default Deny Policy</span>
-          </div>
+          </div> */}
           <div
             // href="/module6"
             onClick={()=>navigate('module9')}

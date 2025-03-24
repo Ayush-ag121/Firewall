@@ -21,7 +21,7 @@ function Logging_policy() {
 
   return (
     <div className="App" style={{ padding: '20px' }}>
-      <h1 style={{fontSize:"20px"}}>Set UFW Logging Level</h1>
+      <h1 style={{fontSize:"20px"}}>Set Logging Level</h1>
      <div style={{display:"flex",gap:"30px",alignItems:"center"}}>
       <label>
         Choose Logging Level:

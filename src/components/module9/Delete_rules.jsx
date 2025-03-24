@@ -41,9 +41,9 @@ const Delete_rules = () => {
 
   return (
     <div className="ufw-container">
-      <h2>UFW Rule Manager</h2>
+      <h2> Rule Manager</h2>
       <div>
-        <h3>Current UFW Rules:</h3>
+        <h3>Current  Rules:</h3>
         {rules.length > 0 ? (
           <table className="ufw-table">
             <thead>

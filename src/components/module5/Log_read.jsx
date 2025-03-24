@@ -34,8 +34,8 @@ function Log_read() {
 
   return (
     <div className="App" style={{ padding: '20px' }}>
-      <h1 style={{fontSize:"20px"}}>UFW Logs Viewer</h1>
-      <button onClick={fetchLogs} style={{ marginBottom: '20px' }}>Fetch UFW Logs</button>
+      <h1 style={{fontSize:"20px"}}> Logs Viewer</h1>
+      <button onClick={fetchLogs} style={{ marginBottom: '20px' }}>Fetch  Logs</button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <div style={{maxHeight:"80vh",overflow:"scroll"}}>
 
@@ -59,7 +59,7 @@ function Log_read() {
           </tbody>
         </table>
       ) : (
-        <p>No logs available. Click "Fetch UFW Logs" to load logs.</p>
+        <p>No logs available. Click "Fetch Logs" to load logs.</p>
       )}
       </div>
     </div>
